@@ -17,7 +17,7 @@ class Authserive{
     BuildContext context
   )async{
     try{
-      http.Response res= await http.post(Uri.parse("http://192.168.21.184:3000/login"),headers: {"Content-Type":"application/json"},body: jsonEncode({"email":email,"password":password,"token":token}));
+      http.Response res= await http.post(Uri.parse("http://192.168.250.184:3000/login"),headers: {"Content-Type":"application/json"},body: jsonEncode({"email":email,"password":password,"token":token}));
       print(res.body);
 
       bool modified = jsonDecode(res.body)['token'];

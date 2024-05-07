@@ -19,7 +19,7 @@ TextEditingController whretostayEditingController = TextEditingController();
 
 class _AddnewState extends State<Addnew> {
   void cardpost()async{
-  http.Response res = await http.post(Uri.parse("http://192.168.196.184:3000/entry"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"username":widget.username,"text":textEditingController.text,"Route":RoutesEditingController.text,"Distance":DisttanceEditingController.text,"Roadcondition":RaodconditionEditingController.text,"Mostimport":MostimportEditingController.text,"whretostay":whretostayEditingController.text,"wayto":"Ladakh"}));
+  http.Response res = await http.post(Uri.parse("http://192.168.250.184:3000/entry"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"username":widget.username,"text":textEditingController.text,"Route":RoutesEditingController.text,"Distance":DisttanceEditingController.text,"Roadcondition":RaodconditionEditingController.text,"Mostimport":MostimportEditingController.text,"whretostay":whretostayEditingController.text,"wayto":"Ladakh"}));
 print(res.body);  
   
 

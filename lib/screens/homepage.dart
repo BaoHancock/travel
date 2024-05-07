@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:travelme/profile.dart';
 import 'package:travelme/screens/Addnew.dart';
 import 'package:http/http.dart' as http;
 import 'package:travelme/screens/dissimble.dart';
@@ -24,7 +25,7 @@ class _HomepageState extends State<Homepage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-
+fetch();
 
   }
   void fetch()async{
@@ -33,13 +34,15 @@ class _HomepageState extends State<Homepage> {
 SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
 glob = sharedPreferences.getString("hack");
 
-
+setState(() {
+  
+});
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       
-      
+      appBar: AppBar(actions: [IconButton(onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Profile(username: glob!)));}, icon: Icon(Icons.people))],),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

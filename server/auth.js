@@ -36,8 +36,8 @@ res.json({msg:e.mee})
 router.post("/newuser",async(req,res)=>{
   try{
     const {username,password}=req.body;
-    let add = new add({username:username,password:password});
-    add = await add.save();
+    let addd = new add({username:username,password:password});
+    addd = await addd.save();
     res.json({username:"Received successfully"})
   }catch(e){
     console.log(e);
@@ -80,6 +80,21 @@ router.post("/fetchday",async(req,res)=>{
       console.log(obj);
     
       res.json(obj);
+  }catch(e){
+
+  }
+})
+router.post("/fetchprofile",async(req,res)=>{
+  try{
+      const{username}=req.body;
+
+
+      const data = await mong.find({username:username,Route:"sd"});
+      var obj={}
+      
+      console.log(obj);
+    
+      res.json(data);
   }catch(e){
 
   }

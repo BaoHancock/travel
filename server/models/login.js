@@ -9,7 +9,7 @@ mongoose.connect(DB).then(()=>{
     console.log("connected to database");
 })
 const login = new  mongoose.Schema({
-    user1:{
+    username:{
             type:String,
             required:true,
     },

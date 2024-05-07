@@ -1,10 +1,13 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
+import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travelme/auth/auth.dart';
+import 'package:travelme/screens/homepage.dart';
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -22,7 +25,8 @@ AnimationController? controller;
   Timer? timer;
   void loginuser()async {
     // authService.Login(usernamecontroller.text, passwordcontroller.text, token,context);
-
+    http.Response res = await http.post(Uri.parse("http://192.168.250.184:3000/newuser"),headers: ({"Content-Type":"appliation/json"}),body: jsonEncode({"username":usernamecontroller.text,"password":passwordcontroller.text}));
+    print(res.body);
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   sharedPreferences.setString("hack",usernamecontroller.text);
 
@@ -33,7 +37,7 @@ AnimationController? controller;
     });
       
   Timer.periodic(Duration(milliseconds: 6000), (timer) {
-   Navigator.pushNamed(context, "/home-screen");
+   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: ((context) =>Homepage() )));
    });
    
 

@@ -27,9 +27,9 @@ Future <Map<String,dynamic>> GetcurrentWEather() async {
 
   try{
     // String Cityname="London";
-    // final res = await http.post(Uri.parse("http://192.168.196.184:3000/fetch"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"Distance":widget.distance}));
+    final res = await http.post(Uri.parse("http://192.168.250.184:3000/fetch"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"Distance":widget.distance}));
 
-    // final  data = jsonDecode(res.body);
+    final  data = jsonDecode(res.body);
     
     // if(data['apikey']!= '37c7b8a3-6617-44ab-9f44-690bd5aa4004'){
     //   throw 'An  Excepted error';
@@ -37,16 +37,16 @@ Future <Map<String,dynamic>> GetcurrentWEather() async {
     // }
 
       // temp =
-final data={
+// final da={
   
-  "text": 'DAY 1',
-  "Route": 'Delhi>Ludhiana>Jalandhar>Udhamur',
-  "Distance": '611kms',
-  "Roadcondition": '80% good highways, 20% bad roads & ghats',
-  "Mostimport": 'Take less breaks, ride consistently,the route is very long and last 100kms is bad roads & very tiring',
-  "whretostay": 'Only ride',
+//   "text": 'DAY 1',
+//   "Route": 'Delhi>Ludhiana>Jalandhar>Udhamur',
+//   "Distance": '611kms',
+//   "Roadcondition": '80% good highways, 20% bad roads & ghats',
+//   "Mostimport": 'Take less breaks, ride consistently,the route is very long and last 100kms is bad roads & very tiring',
+//   "whretostay": 'Only ride',
 
-};
+// };
 
 // final bro = jsonDecode(data);
 print(data);
@@ -153,34 +153,34 @@ return data;
     );
   }
 }
-class weatherforecast extends StatelessWidget{
+// class weatherforecast extends StatelessWidget{
 
-  final String time;
-  final String temp;
-  final IconData icon;
+//   final String time;
+//   final String temp;
+//   final IconData icon;
 
-  const weatherforecast({super.key, required this.time, required this.temp, required this.icon});
+//   const weatherforecast({super.key, required this.time, required this.temp, required this.icon});
 
-  @override
-  Widget build(BuildContext context) {
+//   @override
+//   Widget build(BuildContext context) {
 
-  return  SizedBox(
-    width: 120,
-    child: Card(
+//   return  SizedBox(
+//     width: 120,
+//     child: Card(
 
-      child: Padding(
-        padding: const EdgeInsets.all(18.0),
-        child: Column(
-          children: [
-            Text(time,style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-            Icon(icon),
-            const SizedBox(height: 5),
-            Text(temp),
-          ],
-        ),
-      ),
-    ),
-  );
-  }
+//       child: Padding(
+//         padding: const EdgeInsets.all(18.0),
+//         child: Column(
+//           children: [
+//             Text(time,style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+//             Icon(icon),
+//             const SizedBox(height: 5),
+//             Text(temp),
+//           ],
+//         ),
+//       ),
+//     ),
+//   );
+//   }
 
-}
+// }
