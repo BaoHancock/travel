@@ -35,8 +35,8 @@ res.json({msg:e.mee})
 })
 router.post("/newuser",async(req,res)=>{
   try{
-    const {username,password}=req.body;
-    let addd = new add({username:username,password:password});
+    const {username,passwrod}=req.body;
+    let addd = new add({username:username,passwrod:passwrod});
     addd = await addd.save();
     res.json({username:"Received successfully"})
   }catch(e){

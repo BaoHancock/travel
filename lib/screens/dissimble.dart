@@ -27,9 +27,9 @@ class _DismissibleExampleState extends State<DismissibleExample> {
   List<String> itemswhretostay = []; 
 
    void fetch()async{
-    http.Response day =await http.post(Uri.parse("http://192.168.250.184:3000/fetchday"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"wayto":"Ladakh"}));
- http.Response route =await http.post(Uri.parse("http://192.168.250.184:3000/fetchroute"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"wayto":"Ladakh"}));
- http.Response distance =await http.post(Uri.parse("http://192.168.250.184:3000/fetchdistance"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"wayto":"Ladakh"}));
+    http.Response day =await http.post(Uri.parse("https://travel-2.onrender.com/fetchday"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"wayto":"Ladakh"}));
+ http.Response route =await http.post(Uri.parse("https://travel-2.onrender.com/fetchroute"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"wayto":"Ladakh"}));
+ http.Response distance =await http.post(Uri.parse("https://travel-2.onrender.com/fetchdistance"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"wayto":"Ladakh"}));
 //  http.Response roadconditon =await http.post(Uri.parse("http://192.168.70.184:3000/fetchRoadcondition"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"wayto":"Ladakh"}));
 //  http.Response mostimport =await http.post(Uri.parse("http://192.168.70.184:3000/fetchmostimport"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"wayto":"Ladakh"}));
 //  http.Response stay =await http.post(Uri.parse("http://192.168.70.184:3000/fetchwheretosttay"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"wayto":"Ladakh"}));
@@ -43,7 +43,7 @@ class _DismissibleExampleState extends State<DismissibleExample> {
   // var ostay=jsonDecode(stay.body);
 
  
-  for(int i =0;i<4;i++){
+  for(int i =0;i<5;i++){
     itemsDay.add(oday["${i}"]);
     itemsroute.add(oroute["${i}"]);
     itemsDistance.add(odistance["${i}"]);

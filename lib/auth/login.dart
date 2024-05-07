@@ -25,20 +25,18 @@ AnimationController? controller;
   Timer? timer;
   void loginuser()async {
     // authService.Login(usernamecontroller.text, passwordcontroller.text, token,context);
-    http.Response res = await http.post(Uri.parse("http://192.168.250.184:3000/newuser"),headers: ({"Content-Type":"appliation/json"}),body: jsonEncode({"username":usernamecontroller.text,"password":passwordcontroller.text}));
+    print("object");
+    http.Response res = await http.post(Uri.parse("https://travel-2.onrender.com/newuser"),headers: ({"Content-Type":"appliation/json"}),body: jsonEncode({"username":usernamecontroller.text,"passwrod":passwordcontroller.text}));
     print(res.body);
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   sharedPreferences.setString("hack",usernamecontroller.text);
 
     // print(passwordcontroller.text);
 
-    setState(() {
-      loginani =true;
-    });
-      
-  Timer.periodic(Duration(milliseconds: 6000), (timer) {
-   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: ((context) =>Homepage() )));
-   });
+  
+ 
+   Navigator.pushNamed(context, "/home-screen");
+
    
 
     
@@ -66,14 +64,17 @@ AnimationController? controller;
            
               
               
-            
+              setState(() {
+      loginani =true;
+    });
+      
              loginuser();
             
             
             
             
            
-          },child: LottieBuilder.asset(animate: loginani,"images/lottie/java.json",width: width/1,height: height/1,)))] ,),
+          },child: LottieBuilder.asset(animate: loginani,"images/lottie/java.json",))),] ,),
         ))
       ],),
     );

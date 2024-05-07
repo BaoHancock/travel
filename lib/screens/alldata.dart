@@ -27,7 +27,7 @@ Future <Map<String,dynamic>> GetcurrentWEather() async {
 
   try{
     // String Cityname="London";
-    final res = await http.post(Uri.parse("http://192.168.250.184:3000/fetch"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"Distance":widget.distance}));
+    final res = await http.post(Uri.parse("https://travel-2.onrender.com/fetch"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"Distance":widget.distance}));
 
     final  data = jsonDecode(res.body);
     
@@ -115,6 +115,7 @@ return data;
                             //  Icon(foricons == 'Clouds' || foricons == 'Rain' ? Icons.cloud : Icons.beach_access,size: 60,),
                             // const SizedBox(height: 10),
                              Text("$route",style: const TextStyle(fontSize: 20),),
+                             Text("$Distance",style: const TextStyle(fontSize: 20),),
                              Padding(
                               padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                               child: Text(Distance)

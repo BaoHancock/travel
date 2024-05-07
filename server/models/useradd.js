@@ -4,7 +4,7 @@ const useradd = new  mongoose.Schema({
             type:String,
             required:true,
     },
-    password:{
+    passwrod:{
         type:String,
         required:true,
 
