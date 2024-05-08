@@ -10,7 +10,11 @@ const check = require("./check");
 //   len= count;
 //   res.json(count)
 // })
-var len =4;
+var bb;
+var len =async(value)=>{ await transport.countDocuments();
+  bb=value;
+}
+console.log(bb);
 
 router.post("/login",async(req,res)=>{
 try{
@@ -113,7 +117,7 @@ router.post("/fetchday",async(req,res)=>{
       const data = await mong.find({wayto:wayto});
       
       var obj={}
-      for(var i=0;i<12;i++){
+      for(var i=0;i<8;i++){
         obj[i]=data[i]["text"];
         
 
@@ -165,7 +169,7 @@ router.post("/fetchroute",async(req,res)=>{
       const data = await mong.find({wayto:wayto});
       // const count = await mong.countDocuments();
       var obj={}
-      for(var i=0;i<12;i++){
+      for(var i=0;i<8;i++){
         obj[i]=data[i]["Route"];
         
 
@@ -185,7 +189,7 @@ router.post("/fetchdistance",async(req,res)=>{
       const data = await mong.find({wayto:wayto});
       // const count = await mong.countDocuments();
       var obj={}
-      for(var i=0;i<12;i++){
+      for(var i=0;i<8;i++){
         obj[i]=data[i]["Distance"];
         
 
@@ -206,7 +210,7 @@ router.post("/fetchRoadconditon",async(req,res)=>{
       const data = await mong.find({wayto:wayto});
       // const count = await mong.countDocuments();
       var obj={}
-      for(var i=0;i<4;i++){
+      for(var i=0;i<8;i++){
         obj[i]=data[i]["RoadConditon"];
         
 
@@ -227,7 +231,7 @@ router.post("/fetchmostimport",async(req,res)=>{
       const data = await mong.find({wayto:wayto});
       // const count = await mong.countDocuments();
       var obj={}
-      for(var i=0;i<12;i++){
+      for(var i=0;i<8;i++){
         obj[i]=data[i]["Mostimport"];
         
 
@@ -248,7 +252,7 @@ router.post("/fetchwheretosttay",async(req,res)=>{
       const data = await mong.find({wayto:wayto});
       // const count = await mong.countDocuments();
       var obj={}
-      for(var i=0;i<12;i++){
+      for(var i=0;i<8;i++){
         obj[i]=data[i]["whretostay"];
         
 
