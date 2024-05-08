@@ -161,6 +161,20 @@ router.post("/fetch",async(req,res)=>{
   }
 })
 
+router.post("/displaydetails",async(req,res)=>{
+  try{
+      const{wayto}=req.body;
+
+
+      const data = await transport.find({wayto:wayto});
+      // const count = await mong.countDocuments();
+   
+      
+        res.json(data);
+  }catch(e){
+
+  }
+})
 router.post("/fetchroute",async(req,res)=>{
   try{
       const{wayto}=req.body;
