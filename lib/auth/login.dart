@@ -26,7 +26,7 @@ AnimationController? controller;
   void loginuser()async {
     // authService.Login(usernamecontroller.text, passwordcontroller.text, token,context);
     print("object");
-    http.Response res = await http.post(Uri.parse("https://travel-2.onrender.com/newuser"),headers: ({"Content-Type":"appliation/json"}),body: jsonEncode({"username":usernamecontroller.text,"passwrod":passwordcontroller.text}));
+    http.Response res = await http.post(Uri.parse("https://travel-2.onrender.com/newuser"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"username":usernamecontroller.text,"passwrod":passwordcontroller.text}));
     print(res.body);
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   sharedPreferences.setString("hack",usernamecontroller.text);

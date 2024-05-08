@@ -27,17 +27,29 @@ print(res.body);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [Text(widget.username),TextField(controller:textEditingController),
-        TextField(controller: RoutesEditingController,),
-        TextField(controller: DisttanceEditingController,),
-        TextField(controller: RaodconditionEditingController,),
-        TextField(controller: MostimportEditingController,),
-        TextField(controller: whretostayEditingController,),ElevatedButton(onPressed: (){
-          
-          cardpost();
-          
-          }, child: Text("data"))],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SafeArea(
+          child: Column(
+            children: [
+              SizedBox(height: 10,),
+              Text(widget.username,style: TextStyle(fontWeight: FontWeight.bold),),TextField(controller:textEditingController,decoration: InputDecoration(border: OutlineInputBorder(),hintText: "Enter your DAY"),),
+            SizedBox(height: 10,),
+            TextField(controller: RoutesEditingController,decoration: InputDecoration(border: OutlineInputBorder(),),),
+            SizedBox(height: 10,),
+            TextField(controller: DisttanceEditingController,decoration: InputDecoration(border: OutlineInputBorder())),
+            SizedBox(height: 10,),
+            TextField(controller: RaodconditionEditingController,decoration: InputDecoration(border: OutlineInputBorder()),maxLines: 2,),
+            SizedBox(height: 10,),
+            TextField(controller: MostimportEditingController,decoration: InputDecoration(border: OutlineInputBorder()),maxLines: 5),
+            SizedBox(height: 10,),
+            TextField(controller: whretostayEditingController,decoration: InputDecoration(border: OutlineInputBorder())),ElevatedButton(onPressed: (){
+              
+              cardpost();
+              
+              }, child: Text("data"))],
+          ),
+        ),
       ),
     );
   }

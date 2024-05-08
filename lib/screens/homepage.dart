@@ -42,11 +42,13 @@ setState(() {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      appBar: AppBar(actions: [IconButton(onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Profile(username: glob!)));}, icon: Icon(Icons.people))],),
+      appBar: AppBar(leading:SafeArea(child: TextField(decoration: InputDecoration(border: OutlineInputBorder()),)),actions: [ IconButton(onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Profile(username: glob!)));}, icon: Icon(Icons.people)),IconButton(onPressed: (){setState(() {
+        
+      });}, icon: Icon(Icons.repeat))],),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: [SizedBox(height: 50,),ClipRRect(borderRadius: BorderRadius.all(Radius.circular(40)),child: Image.asset("images/login.jpg"),),
+          children: [SizedBox(height: 50,),ClipRRect(borderRadius: BorderRadius.all(Radius.circular(20)),child: Image.asset("images/login.jpg"),),
             
                 Expanded(flex: 1,child: DismissibleExample()),
               
