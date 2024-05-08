@@ -89,10 +89,10 @@ router.get("/fetchwayto",async(req,res)=>{
 
 
       const data = await transport.find().distinct("wayto");
-      // const count = await transport.countDocuments();
+      const count = await transport.countDocuments();
 console.log(count);
       var obj={}
-      for(var i=0;i<len;i++){
+      for(var i=0;i<count;i++){
         obj[i]=data[i];
         
 
