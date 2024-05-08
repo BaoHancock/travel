@@ -135,12 +135,12 @@ router.post("/fetchprofile",async(req,res)=>{
       const{username}=req.body;
 
 
-      const data = await mong.find({username:username,Route:"sd"});
-      var obj={}
+      const data = await mong.find({username:username});
+      var obj=data[0];
       
       console.log(obj);
     
-      res.json(data);
+      res.json(obj);
   }catch(e){
 
   }
