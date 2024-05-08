@@ -18,7 +18,7 @@ class _TransportbikeState extends State<Transportbike> {
   void sendtransport()async{
     SharedPreferences sharedPreferences =await SharedPreferences.getInstance();
     String? v= sharedPreferences.getString("hack");
-      http.Response res= await http.post(Uri.parse("uri"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"username":v,"wayto":waytocontroller.text,"details":detailscontroller.text}));
+      http.Response res= await http.post(Uri.parse("https://travel-2.onrender.com/transport"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"username":v,"wayto":waytocontroller.text,"details":detailscontroller.text}));
       print(res.body);
   }
   @override

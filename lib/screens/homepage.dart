@@ -1,4 +1,4 @@
-import 'dart:convert';
+
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,9 +7,9 @@ import 'package:lottie/lottie.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travelme/profile.dart';
 import 'package:travelme/screens/Addnew.dart';
-import 'package:http/http.dart' as http;
+
 import 'package:travelme/screens/dissimble.dart';
-import 'package:travelme/widgets/card.dart';
+
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});

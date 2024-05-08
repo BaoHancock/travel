@@ -16,7 +16,7 @@ int length=0;
 List<String> list=[];
 
   void fetchbywayto()async{
-    http.Response res = await http.get(Uri.parse("uri"));
+    http.Response res = await http.get(Uri.parse("https://travel-2.onrender.com/fetchwayto"));
     var data = jsonDecode(res.body);
     list= data;
 
