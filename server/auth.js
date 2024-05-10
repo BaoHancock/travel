@@ -112,7 +112,27 @@ console.log(count);
 
   }
 })
+router.post("/fetchday",async(req,res)=>{
+  try{
+      const{wayto}=req.body;
 
+      
+      const data = await mong.find({wayto:wayto});
+      console.log(data.length);
+      var obj={}
+      for(var i=0;i<data.length;i++){
+        obj[i]=data[i]["text"];
+        
+
+
+      }
+      console.log(obj);
+    
+      res.json(obj);
+  }catch(e){
+
+  }
+})
 
 router.post("/fetchurl",async(req,res)=>{
   try{

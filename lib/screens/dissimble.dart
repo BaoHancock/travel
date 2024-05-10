@@ -31,7 +31,7 @@ class _DismissibleExampleState extends State<DismissibleExample> {
 List urll =[];
    void fetch()async{
     //  http.Response len =await http.get(Uri.parse("https://travel-2.onrender.com/fetchcountmong"));
- http.Response url =await http.post(Uri.parse("https:///fetchurl"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"wayto":"Ladakh"}));
+ http.Response url =await http.post(Uri.parse("https://travel-2.onrender.com/fetchurl"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"wayto":"Ladakh"}));
 
     http.Response day =await http.post(Uri.parse("https://travel-2.onrender.com/fetchday"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"wayto":"Ladakh"}));
  http.Response route =await http.post(Uri.parse("https://travel-2.onrender.com/fetchroute"),headers: ({"Content-Type":"application/json"}),body: jsonEncode({"wayto":"Ladakh"}));
