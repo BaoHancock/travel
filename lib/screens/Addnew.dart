@@ -6,8 +6,10 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:lottie/lottie.dart';
 import 'package:travelme/screens/homepage.dart';
 import 'package:http/http.dart'as http;
+import 'package:travelme/screens/transportofbike.dart';
 import 'package:travelme/utils.dart';
 import 'package:travelme/widgets/notifi.dart';
 class Addnew extends StatefulWidget {
@@ -122,10 +124,39 @@ print(res.body);
                   items: dropdownItems
                   ),
               ElevatedButton(onPressed: (){
-                
-                cardpost();
+                setState(() {
+                  
+                });
+                if(textEditingController.text.isNotEmpty&&RoutesEditingController.text.isNotEmpty&&DisttanceEditingController.text.isNotEmpty&&MostimportEditingController.text.isNotEmpty&&downloadUrl.isNotEmpty&&whretostayEditingController.text.isNotEmpty){
+ cardpost();
+ Navigator.of(context).pop();
+    ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                 backgroundColor: Colors.black
+                 ,
+                  content:Text(""),
+                  action: SnackBarAction(
+                    label: 'Please fill the transprot details',
+                    onPressed: () {
+                       Navigator.of(context).pop();
+                      Navigator.of(context).push(MaterialPageRoute(builder: ((context) => Transportbike())));
+                    },
+                  ),
+                ),
+              );
+                }
+                else{
+  ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('please  your all details'),
+                 
+                ),
+              );
             
           
+                }
+               
+                
                 
                 }, child: Text("ADD Your Journey"))],
             ),

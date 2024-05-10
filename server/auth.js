@@ -15,20 +15,19 @@ var bb;
 var len =async(value)=>{ await transport.countDocuments();
   bb=value;
 }
-console.log(bb);
+
 
 router.post("/login",async(req,res)=>{
 try{
     const {email,password,token}=req.body;
     const found =await  mong.findOne({email});
-    console.log(found.password);
-    console.log(password);
+   
     
     if(found.email == email){
         if(password == found.password){
 
             //  const got =await    mong.updateOne({email:found.email},{$set:{token:"true"}});
-            console.log("up");
+        
             const gotta = await mong.findOneAndUpdate({email:found.email},{token:true,email:found.email});
            
            return res.json(gotta);
@@ -76,7 +75,7 @@ router.post("/entry",async(req,res)=>{
         username,text,Route,Distance,Roadcondition,Mostimport,whretostay,wayto,downloadurl
     })
     user = await user.save();
-    console.log(user);
+    
     res.json(user);
 
   }catch(e){
@@ -109,7 +108,7 @@ console.log(count);
     
       res.json(obj);
   }catch(e){
-
+console.log(e);
   }
 })
 router.post("/fetchday",async(req,res)=>{
@@ -118,7 +117,7 @@ router.post("/fetchday",async(req,res)=>{
 
       
       const data = await mong.find({wayto:wayto});
-      console.log(data.length);
+      
       var obj={}
       for(var i=0;i<data.length;i++){
         obj[i]=data[i]["text"];
@@ -126,11 +125,11 @@ router.post("/fetchday",async(req,res)=>{
 
 
       }
-      console.log(obj);
+      
     
       res.json(obj);
   }catch(e){
-
+    console.log(e);
   }
 })
 
@@ -140,7 +139,7 @@ router.post("/fetchurl",async(req,res)=>{
 
       
       const data = await mong.find({wayto:wayto});
-      console.log(data.length);
+       (data.length);
       var obj={}
       for(var i=0;i<data.length;i++){
         obj[i]=data[i]["downloadurl"];
@@ -148,11 +147,11 @@ router.post("/fetchurl",async(req,res)=>{
 
 
       }
-      console.log(obj);
+      
     
       res.json(obj);
   }catch(e){
-
+    console.log(e);
   }
 })
 router.post("/getlike",async(req,res)=>{
@@ -162,7 +161,7 @@ router.post("/getlike",async(req,res)=>{
 
 
       let data = await lik.find({Distance:Distance,Route:Route});
-      console.log(data[linked]);
+      
       
       if(data.length==0){
         let like = new lik({Distance,Route,linked,count})
@@ -173,7 +172,7 @@ router.post("/getlike",async(req,res)=>{
          res.json(like);
       }
        if(data[0][linked]==false){
-        console.log("here");
+       
         
 
         data[count]=count+1;
@@ -202,7 +201,7 @@ router.post("/fetchprofile",async(req,res)=>{
       const data = await mong.find({username:username});
       var obj=data[0];
       
-      console.log(obj);
+   
     
       res.json(obj);
   }catch(e){
@@ -217,7 +216,7 @@ router.post("/fetch",async(req,res)=>{
 
       const data = await mong.findOne({Distance :Distance});
       
-      console.log(data);
+      
     
       res.json(data);
   }catch(e){
@@ -253,7 +252,7 @@ router.post("/fetchroute",async(req,res)=>{
 
 
       }
-      console.log(obj);
+      
         res.json(obj);
   }catch(e){
 
@@ -273,7 +272,7 @@ router.post("/fetchdistance",async(req,res)=>{
 
 
       }
-      console.log(obj);
+      
      
       res.json(obj);
   }catch(e){
@@ -315,7 +314,7 @@ router.post("/fetchmostimport",async(req,res)=>{
 
 
       }
-      console.log(obj);
+      
       
       res.json(obj);
   }catch(e){
@@ -336,7 +335,7 @@ router.post("/fetchwheretosttay",async(req,res)=>{
 
 
       }
-      console.log(obj);
+      
     
       res.json(obj);
   }catch(e){
@@ -347,7 +346,7 @@ router.post("/fetchwheretosttay",async(req,res)=>{
 router.get("/checkandget",check,async(req,res)=>{
     const user = req.user;
     
-    console.log(user.body);
+   
     res.json({msg:req.user});
   
 })

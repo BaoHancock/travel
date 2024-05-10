@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -22,7 +23,7 @@ List<MediaFile>? singleMeida = await GalleryPicker.pickMedia(context: context,si
   
   return singleMeida?.first.getFile();
   }catch(e){
-    print(e);
+   log(200);
   }
   
 }
@@ -37,11 +38,11 @@ Future<String> uploadfileforuser(File file) async{
     TaskSnapshot ree=await uploadref.putFile(file);
     
      String downloadUrl = await ree.ref.getDownloadURL();
-   print("Download URL: $downloadUrl");
+   
     
     return downloadUrl;
   }catch(e){
-    print(e);
+  
     return "failed";
   }
 }

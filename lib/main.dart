@@ -31,6 +31,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     // TODO: implement initState
+    
     saw();
     
 
@@ -41,10 +42,10 @@ class _MyAppState extends State<MyApp> {
   String? dd = sharedPreferences.getString("hack");
   
 token =dd;
-print(token);
+
 if(token!=null){
   tt=true;
-  print(tt);
+
   setState(() {
     
   });
@@ -63,12 +64,12 @@ tt=false;
       
         
         
-      ).copyWith(primaryColor: Colors.black,backgroundColor: Colors.black,appBarTheme: AppBarTheme(backgroundColor: Colors.black)),
+      ).copyWith(primaryColor: Colors.black,backgroundColor: Colors.black,appBarTheme: const AppBarTheme(backgroundColor: Colors.black)),
       initialRoute: '/',
       routes: {
-        "/": (context)=> tt?Homepage():Login(),
-        "/transport":(context)=>Transportbike(),
-        "/home-screen":(context)=>Homepage(),
+        "/": (context)=> tt?const Homepage():const Login(),
+        "/transport":(context)=>const Transportbike(),
+        "/home-screen":(context)=>const Homepage(),
        
 
       },
