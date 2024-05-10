@@ -1,3 +1,5 @@
 {
-    "cmake.sourceDirectory": "D:/flutter projects in D/travelme/linux"
+    "cmake.sourceDirectory": "D:/flutter projects in D/travelme/linux",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.compile.nullAnalysis.mode": "disabled"
 }

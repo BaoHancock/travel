@@ -24,8 +24,16 @@ class _TransportbikeState extends State<Transportbike> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [Image.asset("images/biketras.png"),TextField(controller: waytocontroller,),TextField(controller: detailscontroller,)],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [Image.asset("images/biketras.png"),SizedBox(height: 20,),Text("Enter Details About Transport",style: TextStyle(fontWeight: FontWeight.w700),),Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(controller: waytocontroller,decoration: InputDecoration(labelText: "Place",helperText: "Place were to transport and click receive"),),
+          ),Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(controller: detailscontroller,decoration: InputDecoration(labelText: "Details",helperText: "Enter a details your Transportation like bike ,lugggage"),),
+          ),ElevatedButton(onPressed: (){sendtransport();}, child: Text("ADD"))],
+        ),
       ),
     );
   }

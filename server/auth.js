@@ -69,11 +69,11 @@ router.post("/entry",async(req,res)=>{
   
   try{
     
-    const {username,text,Route,Distance,Roadcondition,Mostimport,whretostay,wayto}= req.body;
+    const {username,text,Route,Distance,Roadcondition,Mostimport,whretostay,wayto,downloadurl}= req.body;
    
    
     let user = new  mong({
-        username,text,Route,Distance,Roadcondition,Mostimport,whretostay,wayto
+        username,text,Route,Distance,Roadcondition,Mostimport,whretostay,wayto,downloadurl
     })
     user = await user.save();
     console.log(user);
@@ -98,7 +98,7 @@ router.get("/fetchwayto",async(req,res)=>{
       const data = await transport.find().distinct("wayto");
       const count = await transport.countDocuments();
 console.log(count);
-      var obj={}
+      var obj={"total":count}
       for(var i=0;i<count;i++){
         obj[i]=data[i];
         
@@ -112,7 +112,9 @@ console.log(count);
 
   }
 })
-router.post("/fetchday",async(req,res)=>{
+
+
+router.post("/fetchurl",async(req,res)=>{
   try{
       const{wayto}=req.body;
 
@@ -121,7 +123,7 @@ router.post("/fetchday",async(req,res)=>{
       console.log(data.length);
       var obj={}
       for(var i=0;i<data.length;i++){
-        obj[i]=data[i]["text"];
+        obj[i]=data[i]["downloadurl"];
         
 
 

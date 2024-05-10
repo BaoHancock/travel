@@ -9,6 +9,7 @@ import 'package:travelme/profile.dart';
 import 'package:travelme/screens/Addnew.dart';
 
 import 'package:travelme/screens/dissimble.dart';
+import 'package:travelme/screens/transportscreen.dart';
 
 
 class Homepage extends StatefulWidget {
@@ -41,15 +42,15 @@ setState(() {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      appBar: AppBar(leading:SafeArea(child: TextField(decoration: InputDecoration(border: OutlineInputBorder()),)),actions: [ IconButton(onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Profile(username: glob!)));}, icon: Icon(Icons.people)),IconButton(onPressed: (){setState(() {
+      backgroundColor: Colors.black,
+      appBar: AppBar(backgroundColor:Colors.black,actions: [ IconButton(onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Profile(username: glob!)));}, icon: Icon(Icons.people)),IconButton(onPressed: (){setState(() {
         
-      });}, icon: Icon(Icons.repeat))],),
+      });}, icon: Icon(Icons.repeat)),IconButton(icon: Icon(Icons.bike_scooter),onPressed:()=>Navigator.of(context).push(MaterialPageRoute(builder: (context)=>TransportScreen())))],),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: [SizedBox(height: 50,),ClipRRect(borderRadius: BorderRadius.all(Radius.circular(20)),child: Image.asset("images/login.jpg"),),
-            
+          children: [SizedBox(height: 5,),Align(alignment: Alignment.centerLeft,child: Text("Welcome,",style: TextStyle(fontSize: 30 ),)),Align(alignment: Alignment.centerLeft,child: Text("Now Don't worry about Planning",style: TextStyle(fontSize: 15 ),)),SizedBox(height: 20,),ClipRRect(borderRadius: BorderRadius.all(Radius.circular(20)),child: Image.asset("images/login.jpg"),),
+              SizedBox(height: 10,),
                 Expanded(flex: 1,child: DismissibleExample()),
               
               // Cardsi(text: "DAY1",),Cardsi(text: "DAY 2",),Cardsi(text: "DAY 3 ",), Cardsi(text: "DAY 4 ",),Cardsi(text: "DAY 5",), Cardsi(text: "DAY 6",)
@@ -58,9 +59,10 @@ setState(() {
         
         
         ),
-      ),bottomNavigationBar: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,children: [GestureDetector(onTap: ()  {
+      ),
+      bottomNavigationBar: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,children: [GestureDetector(onTap: ()  {
         fetch();
-        Navigator.pushNamed(context, "/transport");},child: Icon(Icons.route_outlined,size: 20,)),Icon(Icons.train,size: 20,),AnimatedContainer( width: 200,duration: Duration(milliseconds: 2000),child: GestureDetector(onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Addnew(username: glob!,)));},child: LottieBuilder.asset("images/lottie/royalfield.json")),),Icon(Icons.all_inbox,size: 20,),Icon(Icons.money,size: 20,)],),
+        Navigator.pushNamed(context, "/transport");},child: Icon(Icons.route_outlined,size: 20,)),AnimatedContainer( width: 200,duration: Duration(milliseconds: 2000),child: GestureDetector(onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Addnew(username: glob!,)));},child: LottieBuilder.asset("images/lottie/royalfield.json")),),Icon(Icons.money,size: 20,)],),
       );
   }
 }

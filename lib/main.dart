@@ -1,17 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travelme/auth/login.dart';
-import 'package:travelme/profile.dart';
-import 'package:travelme/screens/Addnew.dart';
-import 'package:travelme/screens/alldata.dart';
-import 'package:travelme/screens/dissimble.dart';
+import 'package:travelme/firebase_options.dart';
 
 import 'package:travelme/screens/homepage.dart';
-import 'package:travelme/screens/post.dart';
+
 
 import 'package:travelme/screens/transportofbike.dart';
 
-void main() {
+void main() async {
+    WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  
   runApp( const MyApp());
  
 }
@@ -62,7 +63,7 @@ tt=false;
       
         
         
-      ),
+      ).copyWith(primaryColor: Colors.black,backgroundColor: Colors.black,appBarTheme: AppBarTheme(backgroundColor: Colors.black)),
       initialRoute: '/',
       routes: {
         "/": (context)=> tt?Homepage():Login(),

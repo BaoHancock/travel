@@ -58,7 +58,7 @@ AnimationController? controller;
 
           child: Column(children:[ SizedBox(height: 40,),TextField(controller: usernamecontroller,decoration: InputDecoration(label: Icon(Icons.electric_bolt),hintText: "Enter Your Username",border: OutlineInputBorder(
             
-          )),),SizedBox(height: 20,),TextField(controller: passwordcontroller,decoration: InputDecoration(label: Icon(Icons.lock),hintText: "Enter Your Password",border: OutlineInputBorder(
+          )),),SizedBox(height: 20,),TextField(obscureText: true,enableSuggestions: false,controller: passwordcontroller,decoration: InputDecoration(label: Icon(Icons.lock),hintText: "Enter Your Password",border: OutlineInputBorder(
             
           )),),Text("\nForget your password"),Expanded(child: GestureDetector(onTap: (){
            

@@ -47,6 +47,10 @@ const login = new  mongoose.Schema({
     wayto:{
         type:String,
         required:true,
+    },
+    downloadurl:{
+        type:String,
+        required:true,
     }
 })
 

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "525320486685",
+    "project_id": "tmttl-7d9e5",
+    "storage_bucket": "tmttl-7d9e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525320486685:android:916716bf209fdf0516abf4",
+        "android_client_info": {
+          "package_name": "sangram.TMTTL.TravelT"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFa-yuaL5IFBrFIJc5EewuZIGD8Z-49SQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
